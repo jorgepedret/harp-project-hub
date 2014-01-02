@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= project_name %> Project Timeline</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+</head>
+<body>
+  <% if (public._data && public._data.timeline && public._data.timeline.length > 0) { %>
+    <!-- Make sure we have timeline data -->
+    <% var tl = public._data.timeline %>
+    <h1><%= project_name %> Project Timeline</h1>
+    <ol class="timeline">
+      <% for (var i in tl) { %>
+        <li class="tl-node">
+          <% if (tl[i].stamp) { %>
+            <div class="tl-stamp"><%= tl[i].stamp %></div>
+          <% } %>
+          <% if (tl[i].content) { %>
+            <div class="tl-content"><%= tl[i].content %></div>
+          <% } %>
+          <% if (tl[i].links) { %>
+            <% for (var label in tl[i].links) { %>
+              <a href="<%= tl[i].links[label]%>"><%= label %></a>
+            <% } %>
+          <% } %>
+        </li>
+      <% } %>
+    </ol>
+  <% } else { %>
+    <!-- Show instructions if there are no timeline items -->
+    <div class="instructions">
+      <h1>Instructions!</h1>
+      <ol>
+        <li>Rename <strong>_data-sample.json</strong> to <strong>_data.json</strong></li>
+        <li>Refresh the browser to make sure it’s working properly</li>
+        <li>Start adding events to your timeline through the <strong>_data.json</strong> file</li>
+      </ol>
+    </div>
+  <% } %>
+</body>
+</html>
