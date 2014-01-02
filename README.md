@@ -8,6 +8,7 @@ Read more about [project hubs on 24 Ways.](http://24ways.org/2013/project-hubs/)
 This is an HTML template for online project timelines (also known as "project hubs").
 
 ## What is a project hub and why would I use one?
+
 A project hub is a tool for keeping track of the progress of a design project. The hub lives online (either publically available or password protected), so that everyone involved in the team has access to it.
 
 The benefits of using a project hub:
@@ -18,26 +19,30 @@ The benefits of using a project hub:
 - Lives at a URL that doesn't change
 
 ## Resources
+
+- [Original HTML Template](https://github.com/bradfrost/project-hub)
 - [Overview of project hubs on 24 Ways.](http://24ways.org/2013/project-hubs/)
-- [Harp Docs](http://harpjs.com/docs/)
+- [Getting Started with Harp](http://harpjs.com/docs/quick-start)
 
 ## Getting started
 
-1. Install Harp in your computer
-2. Clone this repository
-3. Start Harp server
-4. Visit http://localhost:9966/ in your browser and follow the instructions
+1) Install Harp in your computer
 
-```bash
-$ sudo npm install -g harp
-$ git clone git@github.com:jorgepedret/harp-project-hub.git
-$ harp server harp-project-hub --port 9966
-------------
-Harp v0.11.0 — Chloi Inc. 2012-2013
-Your server is listening at http://localhost:9966/
-Press Ctl+C to stop the server
-------------
 ```
+$ sudo npm install -g harp
+```
+
+2) Clone this repository
+```
+$ git clone git@github.com:jorgepedret/harp-project-hub.git
+```
+
+3) Start Harp server
+```
+$ harp server harp-project-hub --port 9966
+```
+
+4) Visit [http://localhost:9966/](http://localhost:9966/) in your browser and follow the instructions in the page
 
 ## How to add new events to the timeline
 
@@ -84,6 +89,20 @@ If you wanna add a new one, simply append it to the top, like this:
 }
 ```
 
-> Be aware that comas and quotes are important when writing JSON. Follow the same structure as the sample data to avoid syntax issues.
+> Tip: Comas and quotes are important when writing JSON. Follow the same structure as the sample data to avoid syntax issues.
+
+## Publishing & Deploying
+
+To convert your timeline project to HTML, JS and CSS, run `harp compile` from the command line and a `www` directory will be created with all your files contained inside it, which you can publish anywhere.
+
+Here are some popular deploying options:
+
+- [Deploying using the Harp Platform](http://harpjs.com/docs/deployment/harp-platform)
+- [Deploying to GitHub Pages](http://harpjs.com/docs/deployment/github-pages)
+- [Deploying to Heroku](http://harpjs.com/docs/deployment/heroku)
+
+
+
+
 
 
