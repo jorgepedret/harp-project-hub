@@ -101,7 +101,9 @@ Here are some popular deploying options:
 - [Deploying to GitHub Pages](http://harpjs.com/docs/deployment/github-pages)
 - [Deploying to Heroku](http://harpjs.com/docs/deployment/heroku)
 
+## License
 
+MIT
 
 
 
