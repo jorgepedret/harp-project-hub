@@ -39,10 +39,10 @@ $ git clone git@github.com:jorgepedret/harp-project-hub.git
 
 3) Start Harp server
 ```
-$ harp server harp-project-hub --port 9966
+$ harp server harp-project-hub
 ```
 
-4) Visit [http://localhost:9966/](http://localhost:9966/) in your browser and follow the instructions in the page
+4) Visit [http://localhost:9000/](http://localhost:9000/) in your browser and follow the instructions in the page
 
 ## How to add new events to the timeline
 
@@ -101,10 +101,34 @@ Here are some popular deploying options:
 - [Deploying to GitHub Pages](http://harpjs.com/docs/deployment/github-pages)
 - [Deploying to Heroku](http://harpjs.com/docs/deployment/heroku)
 
+## Password Protection
+
+Harp supports basic authentication, making it very fast to add password protection to your entire Project Hub.
+
+To add a single password, update the included `_harp.json` file:
+
+```json
+{
+  "globals": {
+    "project_name": "Acme"
+  },
+  "basicAuth": ["brad_frost:abc123"]
+}
+```
+
+Now, upon visiting visit [http://localhost:9000/](http://localhost:9000/) in your browser, you will be prompted to enter the correct username (brad_frost) and password (abc123). Multiple username/password combinations are also supported:
+
+```json
+{
+  "globals": {
+    "project_name": "Acme"
+  },
+  "basicAuth": ["brad_frost:abc123", "client:def456"]
+}
+```
+
+Note that, because this is a feature of the Harp web server and not HTML, CSS, and JavaScript, the authentication will only work when you are using the [Harp Platform](http://harpjs.com/docs/deployment/harp-platform), or running Harp in production (for example, on [Heroku](http://harpjs.com/docs/deployment/heroku) or [Nodejitsu](http://harpjs.com/docs/deployment/nodejitsu)). Read more about [basic authentication in the Harp documentation](http://harpjs.com/docs/development/basicauth).
+
 ## License
 
 MIT
-
-
-
-
